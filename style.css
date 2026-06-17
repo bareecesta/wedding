@@ -1,0 +1,293 @@
+/* ===== ROOT ===== */
+
+:root {
+    --burgundy: #6d3748;
+    --mauve: #b08aa4;
+    --thistle: #d8bfd8;
+    --sage: #cfd8cc;
+    --cream: #faf7f5;
+    --text: #3d2f34;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Special Elite', monospace;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h1,
+h2,
+h3 {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+}
+
+h2 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-label {
+    display: block;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--mauve);
+    margin-bottom: 1rem;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+    height: 100vh;
+    background-image: url("images/cover.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.hero-date {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-top: 1rem;
+}
+
+.scroll-button {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 12px 28px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.scroll-button:hover {
+    background: white;
+    color: var(--burgundy);
+}
+
+/* ===== SECTIONS ===== */
+
+.section {
+    padding: 8rem 1.5rem;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* ===== COUNTDOWN ===== */
+
+#countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 700px;
+    margin: 3rem auto 0;
+}
+
+.count-item {
+    background: white;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.count-item span {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--burgundy);
+    font-weight: bold;
+}
+
+.count-item small {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ===== CARDS ===== */
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* ===== DAILY PLAN ===== */
+
+.schedule-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.day-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.day-card h3 {
+    color: var(--burgundy);
+    margin-bottom: 1rem;
+}
+
+/* ===== RSVP ===== */
+
+.rsvp-form {
+    max-width: 700px;
+    margin: auto;
+    text-align: left;
+}
+
+.rsvp-form label {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-family: inherit;
+    background: white;
+}
+
+.rsvp-form button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: var(--burgundy);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.rsvp-form button:hover {
+    background: #532634;
+}
+
+/* ===== FINAL NOTE ===== */
+
+.final-note {
+    background: linear-gradient(
+        180deg,
+        var(--cream),
+        #f5eeee
+    );
+}
+
+.romantic-text {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.signature {
+    font-family: 'Caveat', cursive;
+    font-size: 2.5rem;
+    color: var(--burgundy);
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #777;
+}
+
+/* ===== FADE IN ===== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+    #countdown {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section {
+        padding: 5rem 1.25rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+}
