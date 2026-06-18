@@ -1,21 +1,21 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Reece & Jill | 27–31 May 2027</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-<!-- HERO -->
 
 <header class="hero">
 
@@ -37,8 +37,6 @@
 
 </header>
 
-<!-- INVITATION -->
-
 <section id="welcome" class="section fade-in">
 
     <div class="container">
@@ -54,53 +52,13 @@
         <p>
             You are invited to spend the weekend with us celebrating our wedding ceremony.
             We would love for you to join us from Thursday 27 May 2027 until Monday 31 May 2027
-            for a relaxed few days of food, drinks, laughter and celebration with our closest
+            for a relaxed few days of food, wine, sunshine and celebration with our closest
             friends and family.
         </p>
 
     </div>
 
 </section>
-
-<!-- COUNTDOWN -->
-
-<section class="section fade-in">
-
-    <div class="container">
-
-        <span class="section-label">
-            Countdown
-        </span>
-
-        <div id="countdown">
-
-            <div class="count-item">
-                <span id="days">0</span>
-                <small>Days</small>
-            </div>
-
-            <div class="count-item">
-                <span id="hours">0</span>
-                <small>Hours</small>
-            </div>
-
-            <div class="count-item">
-                <span id="minutes">0</span>
-                <small>Minutes</small>
-            </div>
-
-            <div class="count-item">
-                <span id="seconds">0</span>
-                <small>Seconds</small>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- VENUE -->
 
 <section class="section fade-in">
 
@@ -114,68 +72,58 @@
             Les Maisons Monplaisir
         </h2>
 
-        <div class="card">
+        <p>
+            Our wedding celebration will take place at Les Maisons Monplaisir,
+            a beautiful seventeenth-century estate in the Périgord region of
+            South-West France.
+        </p>
 
-            <p>
-                Our wedding celebration will take place at Les Maisons Monplaisir,
-                a beautiful 17th-century estate in the Périgord region of South-West France.
-            </p>
+        <br>
 
-            <br>
+        <p>
+            Surrounded by rolling countryside, gardens and terraces, the estate
+            includes La Chartreuse and the renovated Old Stables, providing
+            accommodation for our guests throughout the weekend.
+        </p>
 
-            <p>
-                Surrounded by rolling countryside, gardens and terraces,
-                the estate includes La Chartreuse and the renovated Old Stables,
-                offering accommodation for our wedding guests throughout the weekend.
-            </p>
+        <br>
 
-            <br>
-
-            <p>
-                Full address, room allocations and arrival details will be shared soon.
-            </p>
-
-        </div>
+        <p>
+            Full address, room allocations and arrival information will be
+            shared closer to the wedding.
+        </p>
 
     </div>
 
 </section>
-
-<!-- GETTING THERE -->
 
 <section class="section fade-in">
 
     <div class="container">
 
         <span class="section-label">
-            Travel
+            Getting There
         </span>
 
         <h2>
-            Getting There
+            Travel Information
         </h2>
 
-        <div class="card">
-
-            <p>
-                Information on recommended airports, transfers, car hire options,
-                travel timings and arrival instructions will be added here shortly.
-            </p>
-
-        </div>
+        <p>
+            Information regarding recommended airports, transfers, car hire,
+            arrival times and directions will be added here soon.
+        </p>
 
     </div>
 
 </section>
-
-<!-- DAILY PLAN -->
 
 <section class="section fade-in">
 
     <div class="container">
 
         <span class="section-label">
-            Weekend Plan
+            Weekend Schedule
         </span>
 
         <h2>
@@ -215,14 +163,12 @@
 
 </section>
 
-<!-- FAQ -->
-
 <section class="section fade-in">
 
     <div class="container">
 
         <span class="section-label">
-            Questions
+            Frequently Asked Questions
         </span>
 
         <h2>
@@ -251,13 +197,16 @@
                 <p>Travel recommendations coming soon.</p>
             </div>
 
+            <div class="faq-item">
+                <h3>Are children invited?</h3>
+                <p>Details coming soon.</p>
+            </div>
+
         </div>
 
     </div>
 
 </section>
-
-<!-- RSVP -->
 
 <section id="rsvp" class="section fade-in">
 
@@ -271,7 +220,7 @@
             Let Us Know
         </h2>
 
-        <p style="margin-bottom:40px;">
+        <p>
             Please complete the form below so we can plan the weekend.
         </p>
 
@@ -289,36 +238,45 @@
 
             <label>
                 Attending?
+
                 <select name="attending" required>
                     <option value="">Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
+
             </label>
 
             <label>
                 Dietary Requirements
+
                 <textarea
                     name="dietary"
                     rows="3"
                     placeholder="Allergies, vegetarian, vegan, etc."
                 ></textarea>
+
             </label>
 
             <label>
                 Comments
+
                 <textarea
                     name="comments"
                     rows="4"
                     placeholder="Anything else you'd like us to know?"
                 ></textarea>
+
             </label>
 
             <button type="submit">
                 Send RSVP
             </button>
 
-            <p id="success-message" style="display:none;margin-top:20px;">
+            <p
+                id="success-message"
+                style="display:none; margin-top:20px;"
+            >
                 Thank you for your RSVP. We can't wait to celebrate with you.
             </p>
 
@@ -327,8 +285,6 @@
     </div>
 
 </section>
-
-<!-- FINAL NOTE -->
 
 <section class="section final-note fade-in">
 
@@ -347,7 +303,11 @@
 </section>
 
 <footer>
-    <p>27–31 May 2027</p>
+
+    <p>
+        27–31 May 2027
+    </p>
+
 </footer>
 
 <script src="script.js"></script>
@@ -388,3 +348,5 @@ document
 
 </body>
 </html>
+```
+
