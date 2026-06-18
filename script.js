@@ -1,59 +1,41 @@
-const weddingStart = new Date('2027-05-27T00:00:00+01:00');
+const weddingDate = new Date("2027-05-27T00:00:00").getTime();
 
-const countdownParts = {
-  days: document.getElementById('days'),
-  hours: document.getElementById('hours'),
-  minutes: document.getElementById('minutes'),
-  seconds: document.getElementById('seconds'),
-};
+function updateCountdownText() {
+    const el = document.getElementById("countdown-text");
+    if (!el) return;
 
-function updateCountdown() {
-  const now = new Date();
-  const distance = weddingStart - now;
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
 
-  if (distance <= 0) {
-    Object.values(countdownParts).forEach((part) => {
-      part.textContent = '0';
-    });
-    return;
-  }
+    if (distance <= 0) {
+        el.textContent = "Wedding weekend";
+        return;
+    }
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
-
-  countdownParts.days.textContent = days;
-  countdownParts.hours.textContent = hours.toString().padStart(2, '0');
-  countdownParts.minutes.textContent = minutes.toString().padStart(2, '0');
-  countdownParts.seconds.textContent = seconds.toString().padStart(2, '0');
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    el.textContent = `${days} days to go`;
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+updateCountdownText();
+setInterval(updateCountdownText, 1000 * 60 * 60);
 
-const fadeElements = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+const form = document.getElementById("rsvp-form");
+
+if (form) {
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        await fetch(
+            "https://script.google.com/macros/s/AKfycbx3SB49WpqlO-ex2MyvUnqbQ6VpERR_3mvVIUL15U5LIhTXENc6lKzph30YESw9u7Ccvg/exec",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
+
+        form.reset();
+        document.getElementById("success-message").style.display = "block";
     });
-  },
-  { threshold: 0.14 }
-);
-
-fadeElements.forEach((element) => observer.observe(element));
-
-const rsvpForm = document.querySelector('.rsvp-form');
-const formMessage = document.getElementById('form-message');
-
-rsvpForm.addEventListener('submit', (event) => {
-  if (!rsvpForm.action) {
-    event.preventDefault();
-    formMessage.textContent = 'Thank you — RSVP connection coming soon.';
-    rsvpForm.reset();
-  }
-});
+}
