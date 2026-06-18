@@ -1,3 +1,5 @@
+Replace your full index.html with this:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Courier+Prime:wght@400;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="./style.css?v=10">
+<link rel="stylesheet" href="./style.css?v=11">
 </head>
 
 <body>
@@ -66,8 +68,11 @@
     <p class="section-label">Getting There</p>
     <h2>Travel Information</h2>
     <p>
-        Guests will need to arrange their own flights. Flights from Edinburgh to Bergerac
-        are usually best booked around 3–6 months in advance.
+        Guests will need to arrange their own flights. We recommend booking Ryanair flights
+        from Edinburgh to Bergerac once they become available, usually around 6 months in advance.
+    </p>
+    <p>
+        We will arrange transfers from Bergerac Airport to the property for everyone arriving there.
     </p>
     <p>
         A few of us may be driving over. If you would prefer to drive, or would like to
@@ -80,11 +85,30 @@
     <h2>The Celebration</h2>
 
     <div class="split-list">
-        <div><strong>Thursday 27 May 2027</strong><span>Coming soon.</span></div>
-        <div><strong>Friday 28 May 2027</strong><span>Coming soon.</span></div>
-        <div><strong>Saturday 29 May 2027</strong><span>Coming soon.</span></div>
-        <div><strong>Sunday 30 May 2027</strong><span>Coming soon.</span></div>
-        <div><strong>Monday 31 May 2027</strong><span>Coming soon.</span></div>
+        <div>
+            <strong>Thursday 27 May 2027</strong>
+            <span>Arrival, settling in and relaxed evening dinner.</span>
+        </div>
+
+        <div>
+            <strong>Friday 28 May 2027</strong>
+            <span>Morning to relax, afternoon wedding prep for those involved, then separate hen and stag celebrations in the evening.</span>
+        </div>
+
+        <div>
+            <strong>Saturday 29 May 2027</strong>
+            <span>Wedding prep in the morning, ceremony in the afternoon, followed by dinner and a party in the evening.</span>
+        </div>
+
+        <div>
+            <strong>Sunday 30 May 2027</strong>
+            <span>Hangover cure in the morning, then a relaxed afternoon.</span>
+        </div>
+
+        <div>
+            <strong>Monday 31 May 2027</strong>
+            <span>Departure and checkout by 10am.</span>
+        </div>
     </div>
 </section>
 
@@ -104,8 +128,12 @@
         <details>
             <summary>Do we need to arrange our own flights?</summary>
             <p>
-                Yes. Guests will need to arrange their own flights. Flights from Edinburgh
-                to Bergerac are usually best booked around 3–6 months in advance.
+                Yes. Guests will need to arrange their own flights. We recommend booking Ryanair
+                flights from Edinburgh to Bergerac once they become available, usually around
+                6 months in advance.
+            </p>
+            <p>
+                We will arrange transfers from Bergerac Airport to the property for everyone arriving there.
             </p>
             <p>
                 A few of us may be driving over. If you would prefer to drive, or would like
@@ -158,10 +186,18 @@
         </details>
 
         <details>
-            <summary>What happens if something is broken?</summary>
+            <summary>What happens if something is already broken when we arrive?</summary>
+            <p>
+                Please notify us of any broken items within 24 hours of arrival if you notice
+                anything damaged or not working.
+            </p>
+        </details>
+
+        <details>
+            <summary>What happens if I break or damage something?</summary>
             <p>
                 We have paid a large security deposit for the property. If anything is broken
-                or damaged, the person responsible will be liable for the cost.
+                or damaged during the stay, the person responsible will be liable for the cost.
             </p>
         </details>
 
@@ -183,7 +219,15 @@
     <h2>Let Us Know</h2>
     <p>Please complete the form below so we can plan the weekend.</p>
 
-    <form id="rsvp-form" class="rsvp-form">
+    <iframe name="hidden-rsvp-frame" style="display:none;"></iframe>
+
+    <form
+        id="rsvp-form"
+        class="rsvp-form"
+        method="POST"
+        target="hidden-rsvp-frame"
+        action="https://script.google.com/macros/s/AKfycbx3SB49WpqlO-ex2MyvUnqbQ6VpERR_3mvVIUL15U5LIhTXENc6lKzph30YESw9u7Ccvg/exec"
+    >
         <input type="text" name="names" required placeholder="Name / Names">
 
         <select name="attending" required>
@@ -197,7 +241,9 @@
 
         <button type="submit">Send RSVP</button>
 
-        <p id="success-message">Thank you for your RSVP.</p>
+        <p id="success-message" style="display:none;">
+            Thank you for your RSVP.
+        </p>
     </form>
 </section>
 
@@ -211,7 +257,34 @@
     <p>27–31 May 2027</p>
 </footer>
 
-<script src="./script.js?v=10"></script>
+<script>
+const weddingDate = new Date("2027-05-27T00:00:00").getTime();
+
+function updateCountdownText() {
+    const el = document.getElementById("countdown-text");
+    if (!el) return;
+
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance <= 0) {
+        el.textContent = "Wedding weekend";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    el.textContent = `${days} days to go`;
+}
+
+updateCountdownText();
+
+document.getElementById("rsvp-form").addEventListener("submit", function () {
+    setTimeout(function () {
+        document.getElementById("success-message").style.display = "block";
+        document.getElementById("rsvp-form").reset();
+    }, 800);
+});
+</script>
 
 </body>
 </html>
