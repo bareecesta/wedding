@@ -1,5 +1,11 @@
-
-/* RESET */
+:root {
+    --burgundy: #6d3748;
+    --mauve: #b08aa4;
+    --green: #dce5d8;
+    --thistle: #d8bfd8;
+    --cream: #fbf7f1;
+    --text: #2a2526;
+}
 
 * {
     margin: 0;
@@ -11,220 +17,237 @@ html {
     scroll-behavior: smooth;
 }
 
-/* GLOBAL */
-
 body {
-    background: #faf8f4;
-    color: #222222;
-    font-family: Georgia, serif;
-    line-height: 1.8;
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Courier Prime', monospace;
+    line-height: 1.7;
 }
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* HERO */
 
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("images/cover.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
-
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.35);
+    background: rgba(35, 28, 30, 0.42);
+}
+
+.nav {
+    position: absolute;
+    top: 32px;
+    z-index: 3;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
 }
 
 .hero-content {
     position: relative;
-    z-index: 10;
+    z-index: 2;
+    padding: 2rem;
+    color: white;
 }
 
-.hero-content h1 {
-    color: white;
-    font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: normal;
+.script-title,
+.script-heading {
+    font-family: 'Alex Brush', cursive;
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: var(--burgundy);
+    line-height: 1;
     margin-bottom: 1rem;
 }
 
-.hero-date {
+.hero .script-title {
     color: white;
-    letter-spacing: 4px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: white;
     text-transform: uppercase;
-    margin-bottom: 2rem;
 }
 
-.scroll-button {
-    display: inline-block;
+.hero-date,
+.countdown-small {
+    margin-top: 1rem;
     color: white;
-    text-decoration: none;
-    border: 1px solid white;
-    padding: 14px 30px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
 }
-
-.scroll-button:hover {
-    background: white;
-    color: black;
-}
-
-/* SECTIONS */
 
 .section {
-    padding: 100px 0;
-    background: #faf8f4;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 110px 24px;
+    text-align: center;
+    border-bottom: 1px solid rgba(109, 55, 72, 0.18);
+}
+
+.section:nth-of-type(even) {
+    background: linear-gradient(180deg, var(--cream), #f7f1f4);
+    max-width: none;
+}
+
+.section:nth-of-type(even) > * {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-label {
     display: block;
+    margin-bottom: 1rem;
+    color: var(--mauve);
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 12px;
-    color: #777;
-    margin-bottom: 15px;
+    letter-spacing: 0.28em;
+    font-size: 0.75rem;
 }
 
 h2 {
-    color: #222222;
-    font-size: 3rem;
-    font-weight: normal;
-    margin-bottom: 30px;
-}
-
-h3 {
-    color: #222222;
-    font-size: 1.5rem;
-    font-weight: normal;
-    margin-bottom: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 400;
+    color: var(--burgundy);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.04em;
 }
 
 p {
-    color: #222222;
-    font-size: 1.1rem;
+    max-width: 720px;
+    margin: 0 auto 1.2rem;
+    font-size: 1rem;
 }
 
-/* SCHEDULE */
-
-.schedule-grid {
-    max-width: 700px;
-    margin: 50px auto 0;
+.split-list {
+    max-width: 650px;
+    margin: 3rem auto 0;
 }
 
-.day-card {
-    padding: 25px 0;
-    border-bottom: 1px solid #dddddd;
+.split-list div {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(109, 55, 72, 0.18);
+    text-align: left;
 }
 
-/* FAQ */
+.split-list span {
+    color: #6f6668;
+}
 
 .faq-list {
     max-width: 700px;
-    margin: 50px auto 0;
-}
-
-.faq-item {
-    padding: 25px 0;
-    border-bottom: 1px solid #dddddd;
+    margin: 3rem auto 0;
     text-align: left;
 }
 
-/* RSVP */
+details {
+    border-bottom: 1px solid rgba(109, 55, 72, 0.18);
+    padding: 22px 0;
+}
+
+summary {
+    cursor: pointer;
+    color: var(--burgundy);
+    font-weight: 700;
+}
+
+details p {
+    margin-top: 1rem;
+}
 
 .rsvp-form {
-    max-width: 650px;
-    margin: 40px auto 0;
-    text-align: left;
-}
-
-.rsvp-form label {
-    display: block;
-    margin-bottom: 25px;
-    color: #222222;
+    max-width: 620px;
+    margin: 3rem auto 0;
+    display: grid;
+    gap: 18px;
 }
 
 .rsvp-form input,
 .rsvp-form select,
 .rsvp-form textarea {
     width: 100%;
-    padding: 15px;
-    margin-top: 8px;
-    border: 1px solid #cccccc;
-    background: white;
-    color: #222222;
-    font-size: 16px;
+    padding: 16px;
+    border: 1px solid rgba(109, 55, 72, 0.25);
+    background: rgba(255,255,255,0.75);
+    color: var(--text);
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
 }
 
 .rsvp-form button {
-    width: 100%;
     padding: 16px;
     border: none;
-    background: #7b4d5a;
+    background: var(--burgundy);
     color: white;
+    font-family: 'Courier Prime', monospace;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     cursor: pointer;
 }
 
-.rsvp-form button:hover {
-    background: #5e3743;
+#success-message {
+    display: none;
+    color: var(--burgundy);
+    font-weight: 700;
 }
 
-/* FINAL NOTE */
-
-.final-note {
-    background: #f4efeb;
+.final {
+    border-bottom: none;
 }
-
-.romantic-text {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.signature {
-    font-size: 2.5rem;
-    color: #7b4d5a;
-}
-
-/* FOOTER */
 
 footer {
     text-align: center;
     padding: 40px 20px;
-    color: #666;
+    color: #7d7070;
 }
 
-/* FADE IN */
+@media (max-width: 700px) {
+    .nav {
+        gap: 14px;
+        top: 20px;
+    }
 
-.fade-in {
-    opacity: 1;
-    transform: none;
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
+    .nav a {
+        font-size: 0.65rem;
+    }
 
     .section {
-        padding: 70px 0;
+        padding: 80px 22px;
     }
 
-    h1 {
-        font-size: 4rem;
+    .split-list div {
+        display: block;
+        text-align: center;
     }
 
-    h2 {
-        font-size: 2.2rem;
+    .split-list span {
+        display: block;
+        margin-top: 8px;
     }
-
 }
-```
-
