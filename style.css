@@ -1,11 +1,5 @@
-:root {
-    --cream: #fbf8f3;
-    --text: #2f2a2a;
-    --muted: #7d7070;
-    --accent: #8b5e6b;
-    --line: rgba(0, 0, 0, 0.12);
-    --white: #ffffff;
-}
+```css
+/* RESET */
 
 * {
     margin: 0;
@@ -17,175 +11,146 @@ html {
     scroll-behavior: smooth;
 }
 
+/* GLOBAL */
+
 body {
-    background: var(--cream);
-    color: var(--text);
-    font-family: 'Cormorant Garamond', serif;
-    line-height: 1.7;
-    overflow-x: hidden;
+    background: #faf8f4;
+    color: #222222;
+    font-family: Georgia, serif;
+    line-height: 1.8;
 }
 
-h1,
-h2,
-h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-}
-
-h1 {
-    font-size: clamp(4rem, 12vw, 9rem);
-    line-height: 0.9;
-}
-
-h2 {
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    margin-bottom: 1.5rem;
-}
-
-h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
-}
-
-p {
-    max-width: 720px;
+.container {
+    max-width: 900px;
     margin: 0 auto;
-    font-size: 1.15rem;
+    padding: 0 20px;
 }
 
-.section-label {
-    display: block;
-    font-size: 0.75rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1rem;
-}
-
-/* HERO IMAGE ONLY */
+/* HERO */
 
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     background-image: url("images/cover.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.28);
+    background: rgba(0,0,0,0.35);
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-    color: white;
-    padding: 2rem;
-    transform: translateY(-5vh);
+    z-index: 10;
 }
 
 .hero-content h1 {
     color: white;
-    text-shadow: 0 4px 25px rgba(0,0,0,0.35);
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: normal;
+    margin-bottom: 1rem;
 }
 
 .hero-date {
-    margin-top: 2rem;
-    font-size: 1.1rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
     color: white;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
 }
 
 .scroll-button {
     display: inline-block;
-    margin-top: 2.5rem;
-    padding: 12px 34px;
-    border: 1px solid white;
     color: white;
     text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: 0.3s ease;
+    border: 1px solid white;
+    padding: 14px 30px;
 }
 
 .scroll-button:hover {
     background: white;
-    color: var(--text);
+    color: black;
 }
 
-/* NORMAL SECTIONS — NO IMAGES */
+/* SECTIONS */
 
 .section {
-    background: var(--cream);
-    padding: 7rem 1.5rem;
-    text-align: center;
-    border-top: 1px solid var(--line);
+    padding: 100px 0;
+    background: #faf8f4;
 }
 
-.hero + .section {
-    border-top: none;
+.section-label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 15px;
 }
 
-.container {
-    max-width: 900px;
-    margin: auto;
+h2 {
+    color: #222222;
+    font-size: 3rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #222222;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #222222;
+    font-size: 1.1rem;
 }
 
 /* SCHEDULE */
 
 .schedule-grid {
     max-width: 700px;
-    margin: 3rem auto 0;
+    margin: 50px auto 0;
 }
 
 .day-card {
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--line);
-}
-
-.day-card:last-child {
-    border-bottom: none;
+    padding: 25px 0;
+    border-bottom: 1px solid #dddddd;
 }
 
 /* FAQ */
 
 .faq-list {
     max-width: 700px;
-    margin: 3rem auto 0;
+    margin: 50px auto 0;
 }
 
 .faq-item {
+    padding: 25px 0;
+    border-bottom: 1px solid #dddddd;
     text-align: left;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--line);
-}
-
-.faq-item:last-child {
-    border-bottom: none;
 }
 
 /* RSVP */
 
 .rsvp-form {
     max-width: 650px;
-    margin: 3rem auto 0;
+    margin: 40px auto 0;
     text-align: left;
 }
 
 .rsvp-form label {
     display: block;
-    margin-bottom: 1.75rem;
-    color: var(--text);
+    margin-bottom: 25px;
+    color: #222222;
 }
 
 .rsvp-form input,
@@ -193,87 +158,73 @@ p {
 .rsvp-form textarea {
     width: 100%;
     padding: 15px;
-    margin-top: 0.5rem;
-    border: 1px solid var(--line);
+    margin-top: 8px;
+    border: 1px solid #cccccc;
     background: white;
-    color: var(--text);
-    font-family: inherit;
-    font-size: 1rem;
+    color: #222222;
+    font-size: 16px;
 }
 
 .rsvp-form button {
     width: 100%;
     padding: 16px;
     border: none;
-    background: var(--accent);
+    background: #7b4d5a;
     color: white;
     cursor: pointer;
-    font-size: 0.95rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
 }
 
 .rsvp-form button:hover {
-    background: #704754;
+    background: #5e3743;
 }
 
-#success-message {
-    color: var(--accent);
-    text-align: center;
-}
-
-/* FINAL */
+/* FINAL NOTE */
 
 .final-note {
-    background: #f6f0ec;
+    background: #f4efeb;
 }
 
 .romantic-text {
     font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .signature {
-    margin-top: 1.5rem;
-    font-size: 2.8rem;
-    color: var(--accent);
+    font-size: 2.5rem;
+    color: #7b4d5a;
 }
+
+/* FOOTER */
 
 footer {
-    background: var(--cream);
     text-align: center;
-    padding: 3rem 1rem;
-    color: var(--muted);
+    padding: 40px 20px;
+    color: #666;
 }
 
-/* ANIMATION */
+/* FADE IN */
 
 .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.fade-in.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 /* MOBILE */
 
 @media (max-width: 768px) {
+
     .section {
-        padding: 5rem 1.25rem;
+        padding: 70px 0;
     }
 
     h1 {
-        font-size: 4.2rem;
+        font-size: 4rem;
     }
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
-    p {
-        font-size: 1.05rem;
-    }
 }
+```
+
