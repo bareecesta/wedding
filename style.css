@@ -1,5 +1,4 @@
-/* ===== ROOT ===== */
-
+```css
 :root {
     --burgundy: #5f4a52;
     --mauve: #9a8696;
@@ -50,6 +49,11 @@ h3 {
     color: #5f4a52;
 }
 
+p {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
 .section-label {
     display: block;
     letter-spacing: 3px;
@@ -58,7 +62,6 @@ h3 {
     color: #8d7a88;
     margin-bottom: 1rem;
 }
-/* ===== HERO ===== */
 
 .hero {
     height: 100vh;
@@ -99,22 +102,21 @@ h3 {
     margin-top: 1rem;
     color: rgba(255,255,255,0.95);
 }
+
 .scroll-button {
     display: inline-block;
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding: 12px 28px;
     border: 1px solid white;
     color: white;
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .scroll-button:hover {
     background: white;
-    color: var(--burgundy);
+    color: #5f4a52;
 }
-
-/* ===== SECTIONS ===== */
 
 .section {
     padding: 8rem 1.5rem;
@@ -122,11 +124,9 @@ h3 {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
 }
-
-/* ===== COUNTDOWN ===== */
 
 #countdown {
     display: grid;
@@ -137,36 +137,27 @@ h3 {
 }
 
 .count-item {
-    background: white;
-    padding: 2rem 1rem;
+    background: rgba(255,255,255,0.92);
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    padding: 2rem 1rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 }
 
 .count-item span {
     display: block;
     font-size: 2.5rem;
-    color: var(--burgundy);
-    font-weight: bold;
+    color: #5f4a52;
 }
 
-.count-item small {
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-/* ===== CARDS ===== */
-
-.card {
-    background: white;
-    padding: 2rem;
+.card,
+.day-card,
+.faq-item {
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(4px);
     border-radius: 20px;
-    max-width: 700px;
-    margin: auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 2rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 }
-
-/* ===== DAILY PLAN ===== */
 
 .schedule-grid {
     display: grid;
@@ -174,19 +165,24 @@ h3 {
     margin-top: 3rem;
 }
 
-.day-card {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-}
-
 .day-card h3 {
-    color: var(--burgundy);
     margin-bottom: 1rem;
 }
 
-/* ===== RSVP ===== */
+.faq-list {
+    max-width: 850px;
+    margin: 3rem auto 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.faq-item {
+    text-align: left;
+}
+
+.faq-item h3 {
+    margin-bottom: 0.5rem;
+}
 
 .rsvp-form {
     max-width: 700px;
@@ -207,8 +203,8 @@ h3 {
     margin-top: 0.5rem;
     border: 1px solid #ddd;
     border-radius: 12px;
-    font-family: inherit;
     background: white;
+    font-family: inherit;
 }
 
 .rsvp-form button {
@@ -216,48 +212,42 @@ h3 {
     padding: 16px;
     border: none;
     border-radius: 12px;
-    background: var(--burgundy);
+    background: #5f4a52;
     color: white;
     cursor: pointer;
-    font-size: 1rem;
     transition: 0.3s;
 }
 
 .rsvp-form button:hover {
-    background: #532634;
+    background: #48373d;
 }
-
-/* ===== FINAL NOTE ===== */
 
 .final-note {
     background: linear-gradient(
         180deg,
         var(--cream),
-        #f5eeee
+        #f2ecef
     );
 }
 
 .romantic-text {
     font-family: 'Caveat', cursive;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #4d3a45;
+    margin-bottom: 1rem;
 }
 
 .signature {
     font-family: 'Caveat', cursive;
-    font-size: 2.5rem;
-    color: var(--burgundy);
+    font-size: 3rem;
+    color: #5f4a52;
 }
-
-/* ===== FOOTER ===== */
 
 footer {
     text-align: center;
     padding: 3rem 1rem;
     color: #777;
 }
-
-/* ===== FADE IN ===== */
 
 .fade-in {
     opacity: 0;
@@ -271,8 +261,6 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* ===== MOBILE ===== */
 
 @media (max-width: 768px) {
 
@@ -292,3 +280,4 @@ footer {
         font-size: 2.5rem;
     }
 }
+```
